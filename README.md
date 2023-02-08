@@ -103,7 +103,6 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Now, let`s get vagrant to give the instructions file to Virtual Box or whatever software for virtual machines you have installed. 
 - `vagrat up` - will create the virtual machine. 
 - To see if all went well, open the Virtual machine software, and watch the machine being created. 
-![](Capture1.PNG)
 - Now, our machine should be up and running.
 - Lastly, how can we access our virtual machine?  Because, as we can see in the Virtual Machine software (in my case, Virtual Box), it is just a terminal in there. We cannot really access it.
 - We access it through `vagrant ssh` (ssh - how we connect to things securely).
