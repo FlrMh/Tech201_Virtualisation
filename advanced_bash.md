@@ -109,6 +109,7 @@ earching for smthn:
 1.  `sudo apt-get update`
 2.  `sudo apt install tree -y`
 - now trype `tree` and you should see the files in your VM as follows:
+
 ![](tree.PNG)
 
 
