@@ -70,4 +70,33 @@ earching for smthn:
 !! man -k word = prints you all the command containing the (word) keyword.
 
 
+8. Permissions:
+- `ls -l` - showcases the permissions.
+**e.g. ne of my files has "drwxrwxr"
+- `r` - stands for read - someone has permission to read the file.
+- `w` - stands for wite - permission to make changes to the file.
+- `x` - stands for execution - they can execute a file. i.e. a .py file, if you have execution permission it means that you can run the program wrote in the file. 
+** Having them written multiple times means:
+- 1st `rwx` - owner
+- 2nd `rwx` - part of the ownership group
+- `r` - everyone else/others/all
+
+** setting permissions:
+- checking the file permission first - `ls -l nameoffile.filetype`
+- changing permissions- `sudo chmod u+x(u = user or owner/ g = group / o = others ; + to add/ - to remove permissions, x(or r or w))` = ch(change file) + mod(mod bit=permissions)
+- changing permissions for everyone at once - `sudo chmod 777 filename.filetype`
+- numbers for changing permissions : 4 = read, 2 = read, 1 = execute. 
+
+![](calchmodfinal.PNG)
+[Chmod calculator](https://chmod-calculator.com/)
+
+9. Process management (similar to task manager on Windows):
+- `top` = real time statistics, and also locks you out of the terminal (not recommended, as it actually locks you out of terminal and it can actually create difficulty when attempting to get back in the terminal within the VM).
+- use `Ctrl + C` to get out.
+- the better way of checking what is working, use `ps` = shows current processes used in the terminal .
+- `ps aux` = print out of all the systems running in  the background. 
+
+
+
+
 
