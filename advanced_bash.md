@@ -96,7 +96,20 @@ earching for smthn:
 - use `Ctrl + C` to get out.
 - the better way of checking what is working, use `ps` = shows current processes used in the terminal .
 - `ps aux` = print out of all the systems running in  the background. 
+** Killing processes:
+- create a random process `sleep 120(time you want it to run for) &(& - makes it run in the background)` - will return a number in eg in my case[1]1955.
+- to kill `sleep` use `kill -9 and the PID(in this case 1955).
+- after you kill something with `kill -9`, if you type `ps` it will show `sleep` as Killed. 
+- `Ctrl + Z` - stops a program
+- `fg` - foreground( brings it back to the foreground from the background)
 
+10. Tree:
+- showcases all the folders in our device (more visual way of seeing files and folders.)
+- must be installed, so run:
+1.  `sudo apt-get update`
+2.  `sudo apt install tree -y`
+- now trype `tree` and you should see the files in your VM as follows:
+![](tree.PNG)
 
 
 
