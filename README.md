@@ -107,7 +107,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Lastly, how can we access our virtual machine?  Because, as we can see in the Virtual Machine software (in my case, Virtual Box), it is just a terminal in there. We cannot really access it.
 - We access it through `vagrant ssh` (ssh - how we connect to things securely).
 - To be sure you are inside the VM, you should have the following :
-![](vmconf.PNG)
+
 
 - Checking that you are in the correct place within the VM is done with `ls -a`. In my case, due to my choice of OS and ditribution, I need to see this `.  ..  .bash_logout  .bashrc  .cache  .profile  .ssh` , which will confirm me that I am within the VM.
 - Within the VM, we want to be able to use a web browse. Usually the choice will be either Apache or nginx. We are going to set up the VM with nginx. 
@@ -116,7 +116,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - `sudo apt -get install nginx -y`
 - `sudo systemctl start nginx`
 - `sudo systemctl status nginx` (should show active: running)
-![](nginxactive.PNG)
+
 - Let`s now view the app. Vagrant assigns a new I.P address to the VM everytime it is started up. So, we can change the I.P. address.
 - In the Vagrantfile, below the line of code that states the configurations of your VM in terms of OS (e.g. in my case it will be `config.vm.box = "ubuntu/xenial64"` ), add the following:
 - `config.vm.network "private_network", ip: "192.168.10.100"`
@@ -124,3 +124,4 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Now, we will tell the system about the change in I.P. that we just made, by using the command `vagrant reload` - will reboot the VM with the new settings. 
 - Feel free to access the VM by typing the I.P. address in your browser. :) 
 ![](nginxonline.PNG)
+
