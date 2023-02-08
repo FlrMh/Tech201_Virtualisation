@@ -3,7 +3,8 @@
  - To perform these, please make sure you are within the VM in Git Bash, by typing the command `vagrant ssh`.
  
 
- 1. `uname` = system info - OS(kernel)
+ 1. `uname` = system info - returns OS(kernel)
+
  ** flag = what we put after a command, to make it more specific
 -  `uname -a` (-> -a = flag(short for --all)) = this command outputs all the details about the system, not only the OS name. 
 - `uname -s` = same as uname itself
