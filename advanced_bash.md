@@ -88,6 +88,7 @@ earching for smthn:
 - numbers for changing permissions : 4 = read, 2 = read, 1 = execute. 
 
 ![](calchmodfinal.PNG)
+
 [Chmod calculator](https://chmod-calculator.com/)
 
 9. Process management (similar to task manager on Windows):
