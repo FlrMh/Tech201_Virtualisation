@@ -150,6 +150,12 @@ earching for smthn:
 
 ** Now our tool and packages library is updated and everything that is needed is installed. :) 
 
+- After you finish installing everything, the terminal should be prompting a protocol that will enable you to run the app.
+- Go on your web browser, `copy + paste` the I.P. address you set for the app in the Vagrant file, and add the protocol indicated by terminal at the end of the I.P. address in the following format:
+`http://192.168.10.100:3000/`.
+
+
+
 
 
 
