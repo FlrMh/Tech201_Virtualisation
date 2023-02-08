@@ -96,6 +96,7 @@ earching for smthn:
 - use `Ctrl + C` to get out.
 - the better way of checking what is working, use `ps` = shows current processes used in the terminal .
 - `ps aux` = print out of all the systems running in  the background. 
+
 ** Killing processes:
 - create a random process `sleep 120(time you want it to run for) &(& - makes it run in the background)` - will return a number in eg in my case[1]1955.
 - to kill `sleep` use `kill -9 and the PID(in this case 1955).
@@ -111,6 +112,43 @@ earching for smthn:
 - now trype `tree` and you should see the files in your VM as follows:
 
 ![](tree.PNG)
+
+** "config.vm.box_download_insecure = true" to add in case of unrecognised vm.
+
+
+## Running tools and programs testing; Updating and/or installing tools and programs:
+
+** 
+- `gem install bundler` - ruby testing bundle
+- `bundle`
+- `rake bundle` - runs all the tests to check if everything works as it should
+- `app` - package with all the tools and programs.
+** It will show loads of things that are not installed.
+- Let`s install them through git bash:
+- `sudo apt-get update -y` - update every tool and program
+- `sudo apt-get upgrade -y` - careful when you use it, cause it upgrades everything, makes changes to the tools. 
+
+** We must install nginx, so:
+- `sudo apt-get install nginx -y`
+- `sudo systemctl enable/* nginx`
+
+** If we need a specific version of a tool/ program/ package:
+- must do your own research.
+
+
+** Installing nodejs:
+- `sudo apt-get install python-software-properties`
+- `curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
+- `sudo apt-get install nodejs -y`
+- check the version by typing `nodejs -v`
+
+
+** Installing pm2
+- we needed nodejs to install the pm2 package. So now that we have nodejs, we should run:
+- `sudo npm install pm2 -g`
+
+
+** Now our tool and packages library is updated and everything that is needed is installed. :) 
 
 
 
