@@ -1,7 +1,7 @@
 # Linux Commands
 
  - To perform these, please make sure you are within the VM in Git Bash, by typing the command `vagrant ssh`.
- ![](kernandshell.PNG) 
+ 
 
  1. `uname` = system info - OS(kernel)
  ** flag = what we put after a command, to make it more specific
@@ -14,6 +14,8 @@
 ![](uname.PNG)
 
 2. Navigation (as we don`t have a GUI, and we are only accessing the shell, we cannot use the mouse, so you only use commands):
+![](kernandshell.PNG) 
+** So, at the moment we are below the GUI, in the Shell, communicating with the Kernel through command line. And we navigate through the Kernel(the place below, generally speaking the OS of the machine) by using commands. 
 - `cd` - change directory 
 - `cd ..` - takes you back one level
 - `cd ../..` - takes you back two level
