@@ -89,3 +89,39 @@ Virtualisation - creating a basic development environment:
 
  `vagrant init(initializes a new environment in this folder) ubuntu(os)/xenial64(distribution of os) + Enter.` 
 
+
+
+
+### Creating a Virtual Environments
+- Open GitBash.
+- Using `cd`, get in the directory tracked by Git.
+- Use `ls` to make sure you are in the correct place. 
+- Once you are in the correct directory, follow the next commands:
+- `vagrant init`(init = initializes the file with instructions that will be sent to the software that will create the virtual machine) `OS/distribution of OS` (e.g. ubuntu/xenial64).
+- In your directory, you should notice a Vagrantfile being created.
+Go in the Vagrant file and delete all the comments. Keep only the 3 lines of code necessary to execute the instructions. 
+- Now, let`s get vagrant to give the instructions file to Virtual Box or whatever software for virtual machines you have installed. 
+- `vagrat up` - will create the virtual machine. 
+- To see if all went well, open the Virtual machine software, and watch the machine being created. 
+![](Capture1.PNG)
+- Now, our machine should be up and running.
+- Lastly, how can we access our virtual machine?  Because, as we can see in the Virtual Machine software (in my case, Virtual Box), it is just a terminal in there. We cannot really access it.
+- We access it through `vagrant ssh` (ssh - how we connect to things securely).
+- To be sure you are inside the VM, you should have the following :
+![](vmconf.PNG)
+
+- Checking that you are in the correct place within the VM is done with `ls -a`. In my case, due to my choice of OS and ditribution, I need to see this `.  ..  .bash_logout  .bashrc  .cache  .profile  .ssh` , which will confirm me that I am within the VM.
+- Within the VM, we want to be able to use a web browse. Usually the choice will be either Apache or nginx. We are going to set up the VM with nginx. 
+- Commands to install nginx:
+- `sudo apt-get update -y`
+- `sudo apt -get install nginx -y`
+- `sudo systemctl start nginx`
+- `sudo systemctl status nginx` (should show active: running)
+![](nginxactive.PNG)
+- Let`s now view the app. Vagrant assigns a new I.P address to the VM everytime it is started up. So, we can change the I.P. address.
+- In the Vagrantfile, below the line of code that states the configurations of your VM in terms of OS (e.g. in my case it will be `config.vm.box = "ubuntu/xenial64"` ), add the following:
+- `config.vm.network "private_network", ip: "192.168.10.100"`
+- Go back to gitbash and exit the VM, by using the command `exit`. If `exit` does not work, use `Ctrl + C`. 
+- Now, we will tell the system about the change in I.P. that we just made, by using the command `vagrant reload` - will reboot the VM with the new settings. 
+- Feel free to access the VM by typing the I.P. address in your browser. :) 
+![](nginxonline.PNG)
