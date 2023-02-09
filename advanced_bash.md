@@ -26,6 +26,8 @@
 - `cd /`- (takes you to the root directory)
 - `cd ~` - (takes you to the home directory)
 ![](gettingout.PNG)
+
+
 **Accessing files and folders:**
 - Absolute path (from the absolute base of the machine)
 ![](abspaths.PNG)
