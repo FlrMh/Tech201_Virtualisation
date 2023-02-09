@@ -127,17 +127,25 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 
 
 ## Provisioning
-- Create a `provision.sh` file containing BASH scipts for updating, installing and enabling necessary tools and packages (in our case, nginx).
+- Think of provisioning as a set of instructions sent to the virtualisation software that will configure the VM in the way that we want. 
+- Remember in our Vagrant file, we specified that we want the machine to have a certain OS, a certain distribution of the OS, we wanted to assign it a specific I.P. address and we wanted it to import a folder named `app` that can be found in our project folder.
+- Now, with Provisioning, instead of having to get into the VM to install and enable every single tool that we need, we can have a file that contains all the instructions on how to install and enable those tools, and the sistem can follow those instructions alone, without us having to get into the machine and doing it manually.
+- Create a `provision.sh` file containing BASH scipts for updating, installing and enabling necessary tools and packages (in our case, nginx, nodejs and pm2).
 
-![](provisionbash.PNG)
+![](provisioninstructions.PNG)
 
-- Now, in your Vagrant file, add the intructions written in the provision file, by typing `config.vm.provision "shell", path: "provision.sh"`. This will basically the tell software that creates the VM to use these instructions when it runs the VM.
+- Now, in your Vagrant file, add the intructions written in the provision file, by typing `config.vm.provision "shell", path: "provision.sh"`. This will basically the tell the software that creates the VM to use these instructions when it runs the VM.
+
+![](provisioninvfile.PNG)
 
 - If you now go in the terminal in the folder where you have the project, and input `vagrant up`, your machine should start running the VM and you should be able to see if the instructions you provided are being configured as instructed. 
 
-- You can easily check if the VM configured properly by trying to access the I.P. address you assigned the VM in your browser. If you see the following: 
+- You can easily check if the VM configured properly by trying to access the I.P. address you assigned the VM in your browser, alongside the port on which the app is listening(prompted in the terminal if all the provisioning has been correctly configured). If you see the following: 
 
-![](nginxonline.PNG)
+![](apprunning.PNG)
+
+ Happy Days! You app is up and running due to a correct execution of the provisioning instructions.
+
 
 
 
