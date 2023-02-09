@@ -25,13 +25,10 @@
 - `cd /`- (takes you to the root directory)
 - `cd ~` - (takes you to the home directory)
 ![](gettingout.PNG)
-- `ls -l` - 'long format' tells you the permissions for the files within the folder.
-** accessing files and folders:
-- absolute path:
-** from the absolute base of the machine
+**Accessing files and folders:**
+- Absolute path (from the absolute base of the machine)
 ![](abspaths.PNG)
-- relative path:
-** from where I am right now
+- Relative path (from where I am right now in my machine)
 ![](absvsrel.PNG)
 
 3. ***Creating folders:***
