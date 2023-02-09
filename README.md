@@ -81,11 +81,10 @@ Virtualisation - creating a basic development environment:
 *** [Clear instruction on setting up Ruby, Virtual Box and Vagrant](https://github.com/khanmaster/vb_vagrant_installtion) ***
 
 ### Vagrant Install:
-- 
 
 
 
-- In git bash get in the directory lnicked to github and afer you are on main branch:
+- In git bash, get in the directory lincked to github and afer you are on main branch:
 
  `vagrant init(initializes a new environment in this folder) ubuntu(os)/xenial64(distribution of os) + Enter.` 
 
