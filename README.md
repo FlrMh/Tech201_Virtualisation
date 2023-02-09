@@ -125,3 +125,19 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Feel free to access the VM by typing the I.P. address in your browser. :) 
 ![](nginxonline.PNG)
 
+
+## Provisioning
+- Create a `provision.sh` file containing BASH scipts for updating, installing and enabling necessary tools and packages (in our case, nginx).
+
+![](provisionbash.PNG)
+
+- Now, in your Vagrant file, add the intructions written in the provision file, by typing `config.vm.provision "shell", path: "provision.sh"`. This will basically the tell software that creates the VM to use these instructions when it runs the VM.
+
+- If you now go in the terminal in the folder where you have the project, and input `vagrant up`, your machine should start running the VM and you should be able to see if the instructions you provided are being configured as instructed. 
+
+- You can easily check if the VM configured properly by trying to access the I.P. address you assigned the VM in your browser. If you see the following: 
+
+![](nginxonline.PNG)
+
+
+

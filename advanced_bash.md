@@ -161,6 +161,7 @@ earching for smthn:
 
 **Launching our app:**
 - After you finish installing everything, the terminal should be prompting a protocol that will enable you to run the app.
+- Move into the `app` folder and then run `npm install` then `node app.js`
 - Go on your web browser, `copy + paste` the I.P. address you set for the app in the Vagrant file, and add the protocol indicated by terminal at the end of the I.P. address in the following format:
 `http://192.168.10.100:3000/`.
 
