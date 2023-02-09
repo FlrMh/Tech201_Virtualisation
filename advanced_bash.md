@@ -3,7 +3,9 @@
  - To perform these, please make sure you are within the VM in Git Bash, by typing the command `vagrant ssh`.
  
 
- 1. `uname` = system info - returns OS(kernel)
+ 1. ***Getting info about the system:*** 
+ 
+ - `uname` = system info - returns OS(kernel)
 
  ** flag = what we put after a command, to make it more specific
 -  `uname -a` (-> -a = flag(short for --all)) = this command outputs all the details about the system, not only the OS name. 
@@ -14,7 +16,7 @@
 - `uname -srp`
 ![](uname.PNG)
 
-2. Navigation (as we don`t have a GUI, and we are only accessing the shell, we cannot use the mouse, so you only use commands):
+2. ***Navigation (as we don`t have a GUI, and we are only accessing the shell, we cannot use the mouse, so you only use commands):***
 ![](kernandshell.PNG) 
 ** So, at the moment we are below the GUI, in the Shell, communicating with the Kernel through command line. And we navigate through the Kernel(the place below, generally speaking the OS of the machine) by using commands. 
 - `cd` - change directory 
@@ -32,24 +34,24 @@
 ** from where I am right now
 ![](absvsrel.PNG)
 
-3. Creating folders:
+3. ***Creating folders:***
 - `touch` - creating files of any kind - but empty files.
 - `nano +filename.filetype` - opens the file with the name you provided, and you can edit the file.  (exiting: `Ctrl +x` + `y` + `Enter`)
 - `cat +filename.filetype` - presents the content of the file; concatenates it. 
 - `mkdir + name of folder` - make directory
 
-4. Copying files:
+4. ***Copying files:***
 - `cp +namefile.filetype nameofnewfile.filetype` - copies the content of a file.
 - `cp filename.filetype directory/nameofcopiedfile.filetype` - copies the content of a file into a new file within a specified folder. 
 ** copying folders:
 - `cp -rf my_folder new_folder` - rf = recursive(to the action on the folder and everything inside), force(do it even if the file is locked or is being used) - in the format of : cp -rf "the folder you want to copy"  "the name of the new folder where you want to copy the previously mentioned folder". 
 - `rsync -r nameofthefirstfolder nameofthenewfolder` - syncs the folders 
 
-5. Moving files:
+5. ***Moving files:***
 - `mv thefileyouwanttomove.filetype thefolderyouwantoputitinto/` - move a file ina folder; the towards back you want to go add `../../../`
 - `mv fileyouwanttomove.filetype fileyouwanttomove**rename**.filetype`  - renames a file.
 
-6. Deleting files:
+6. ***Deleting files:***
 - `rm -rf` - no chek, it will just remove it.
 - `rm -rf nameoffile.filetype`
 - `rm -rf foldername`
@@ -59,18 +61,22 @@ earching for smthn:
 - `grep wordtobefound *` - prints all the places where you can find that word.
 - `grep wordtobefound * -R` - recursive look-up = check everything inside of folders within folders etc. 
 
-7. Wild cards:
+7. ***Wild cards:***
 - allow us to use characters we use in our files and folders names so we can easily access them.
 - `ls file*` - will return me all the files and folders that begin with "file".
 
 
-** Help instructions:
+
+**Help instructions:**
+
 !!! command --help = will output you details about the command
+
 !! man ls = user manual for Lnux terminal
+
 !! man -k word = prints you all the command containing the (word) keyword.
 
 
-8. Permissions:
+8. ***Permissions:***
 - `ls -l` - showcases the permissions.
 **e.g. ne of my files has "drwxrwxr"
 - `r` - stands for read - someone has permission to read the file.
@@ -81,7 +87,7 @@ earching for smthn:
 - 2nd `rwx` - part of the ownership group
 - `r` - everyone else/others/all
 
-** setting permissions:
+**Setting permissions:**
 - checking the file permission first - `ls -l nameoffile.filetype`
 - changing permissions- `sudo chmod u+x(u = user or owner/ g = group / o = others ; + to add/ - to remove permissions, x(or r or w))` = ch(change file) + mod(mod bit=permissions)
 - changing permissions for everyone at once - `sudo chmod 777 filename.filetype`
@@ -91,13 +97,13 @@ earching for smthn:
 
 [Chmod calculator](https://chmod-calculator.com/)
 
-9. Process management (similar to task manager on Windows):
+9. ***Process management (similar to task manager on Windows):***
 - `top` = real time statistics, and also locks you out of the terminal (not recommended, as it actually locks you out of terminal and it can actually create difficulty when attempting to get back in the terminal within the VM).
 - use `Ctrl + C` to get out.
 - the better way of checking what is working, use `ps` = shows current processes used in the terminal .
 - `ps aux` = print out of all the systems running in  the background. 
 
-** Killing processes:
+**Killing processes:**
 - create a random process `sleep 120(time you want it to run for) &(& - makes it run in the background)` - will return a number in eg in my case[1]1955.
 - to kill `sleep` use `kill -9 and the PID(in this case 1955).
 - after you kill something with `kill -9`, if you type `ps` it will show `sleep` as Killed. 
@@ -118,7 +124,7 @@ earching for smthn:
 
 ## Running tools and programs testing; Updating and/or installing tools and programs:
 
-** 
+**Testing tools library**
 - `gem install bundler` - ruby testing bundle
 - `bundle`
 - `rake bundle` - runs all the tests to check if everything works as it should
@@ -128,28 +134,32 @@ earching for smthn:
 - `sudo apt-get update -y` - update every tool and program
 - `sudo apt-get upgrade -y` - careful when you use it, cause it upgrades everything, makes changes to the tools. 
 
-** We must install nginx, so:
+**Installing tools and packages:**
+1.  Installing nginx:
 - `sudo apt-get install nginx -y`
 - `sudo systemctl enable/* nginx`
 
-** If we need a specific version of a tool/ program/ package:
-- must do your own research.
+!! If we need a specific version of a tool/ program/ package:
+
+- ALWAYS DO YOUR OWN RESEARCH.
 
 
-** Installing nodejs:
+2. Installing nodejs:
 - `sudo apt-get install python-software-properties`
 - `curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
 - `sudo apt-get install nodejs -y`
 - check the version by typing `nodejs -v`
 
 
-** Installing pm2
+3. Installing pm2
 - we needed nodejs to install the pm2 package. So now that we have nodejs, we should run:
 - `sudo npm install pm2 -g`
 
 
-** Now our tool and packages library is updated and everything that is needed is installed. :) 
+#### ***Now our tool and packages library is updated and everything that is needed is installed. :)*** 
 
+
+**Launching our app:**
 - After you finish installing everything, the terminal should be prompting a protocol that will enable you to run the app.
 - Go on your web browser, `copy + paste` the I.P. address you set for the app in the Vagrant file, and add the protocol indicated by terminal at the end of the I.P. address in the following format:
 `http://192.168.10.100:3000/`.
