@@ -14,6 +14,7 @@
 ** we can also combine flags :
 - `uname -si` 
 - `uname -srp`
+
 ![](uname.PNG)
 
 2. ***Navigation (as we don`t have a GUI, and we are only accessing the shell, we cannot use the mouse, so you only use commands):***
