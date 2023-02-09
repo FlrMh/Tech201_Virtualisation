@@ -137,7 +137,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 
 ![](provisioninvfile.PNG)
 
-- If you now go in the terminal in the folder where you have the project, and input `vagrant up`, your machine should start running the VM and you should be able to see if the instructions you provided are being configured as instructed. 
+- If you now go in the terminal in the folder where you have the project, and input `vagrant up`(only if you do not already have a VM running - in which case, simply use `<vagrant reload --provision.>`), your machine should start running the VM and you should be able to see if the instructions you provided are being configured as instructed. 
 
 - You can easily check if the VM configured properly by trying to access the I.P. address you assigned the VM in your browser, alongside the port on which the app is listening(prompted in the terminal if all the provisioning has been correctly configured). If you see the following: 
 
@@ -145,6 +145,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 
  Happy Days! You app is up and running due to a correct execution of the provisioning instructions.
 
+- Want to find out how to set up a reverse proxy for our app? Please, check out the NGINX_proxy.md.  
 
 
 
