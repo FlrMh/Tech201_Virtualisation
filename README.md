@@ -147,5 +147,22 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 
 - Want to find out how to set up a reverse proxy for our app? Please, check out the NGINX_proxy.md.  
 
+## Creating 2 VMs with the same Vagrant file.
+
+- You can use a Vagrant file to create multiple VMs at the same time.
+- All it takes is setting up the file so the instructions clearly state how many VMs you want to create and their specific configuration.
+- In my case, with one Vagrant file I am going to be able to create an app and a database:
+
+![](2VMSconf.PNG)
+
+- As you can see, as I mentioned earlier, the Vagrant file is going to send this file to the software that creates the VMs and ell it to create 2 VMX and configure them: one as an app(just like we did yesterday, while also including separate tools and packages installation instructions via provision.sh) and the second one as a database. 
+
+!!! Make sure you remove any Vagrant file ou might have in your project folder before setting it up with a new one, otherwise you will encounter errors. 
+
+- Now that the Vagrant file with the instructions for two VMs is in place, we just need to make sure we run the command `vagrant up` from 2 separate Git Bash terminals, so we can access the database and the app separately, but at the same time. 
+- You can access them separately by using the commands (in my case) `vagrant ssh app` and `vagrant ssh database`. In a different case it will be a matter of how you instructed Vagrant in the Vagrant file to configure the VMs as. 
+
+![](datavsap.PNG)
+
 
 
