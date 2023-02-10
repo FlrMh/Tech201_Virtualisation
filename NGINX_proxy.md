@@ -60,7 +60,7 @@ An Internet based attacker would find it very difficult to acquire data found in
 
 Just like forward proxy servers, reverse proxy servers also provide a single point of access and control. They are typically set up to work alongside one or two firewalls to control traffic and requests directed to internal servers.
 
-![](fpvsrp.png)
+![](images/fpvsrp.png)
 
 ## When should you use Proxy and when should you use Reverse Proxy
 
@@ -114,7 +114,7 @@ server {
 1. First, access your VM by typing in terminal the `vagrant up`(to get it running) and `vagrant ssh`(to get inside the VM) commands.
 2. Now, within your VM, run the command `sudo nano /etc/nginx/sites-available/default`. This will open up the default configuration file for NGINX and allow you to make the necessary changes. This file should look like this:
 
-![](defaultconfig.PNG)
+![](images/defaultconfig.PNG)
 
 3. Within this file we have to make some changes in the `location /` section.
 We will simply have to replace the current configuration with the following:
@@ -129,13 +129,13 @@ We will simply have to replace the current configuration with the following:
 
 !!! Always make sure on which port your app is listening, as that needs to be the port you mention at `http://lovalhost:`. In my case, I will have to change that to 3000 as that is the port that my app is listening on.  
 
-![](portnumber.PNG)
+![](images/portnumber.PNG)
 
 4. Once you did the necessary changes, let`s make sure that we didn`t make any mistake by typing in `sudo nginx -t`. 
 5. To set up these changes, we have to restart nginx by using `sudo systemctl restart nginx`.
 6. Now, we should be able to have everything in place, and access our app by using only the I.P. address, so without having to mention every single time the port number. Type the I.P. address in your web browser, same way we normally check if nginx is up and running. And......
 
-![](reverseproxyworks.PNG)
+![](images/reverseproxyworks.PNG)
 
 Happy Days! Now our app can be accessed simply by using the I.P. address in the browser. 
 

@@ -74,7 +74,7 @@ Virtualisation - creating a basic development environment:
 - It will ask you to restart after the installation finished, just so the program can set everything in place.
 - Now, in order to ensure that you can use virtualisation, we need to check some Windoes Features.
 - Make sure you have Windows Hyperviser Platform, and Virtual Machine Platform.
-![](Capture.PNG)
+![](images/Capture.PNG)
 - If you also have Hyper-V, please untick it. 
 
 
@@ -122,7 +122,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Go back to gitbash and exit the VM, by using the command `exit`. If `exit` does not work, use `Ctrl + C`. 
 - Now, we will tell the system about the change in I.P. that we just made, by using the command `vagrant reload` - will reboot the VM with the new settings. 
 - Feel free to access the VM by typing the I.P. address in your browser. :) 
-![](nginxonline.PNG)
+![](images/nginxonline.PNG)
 
 
 ## Provisioning
@@ -131,17 +131,17 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Now, with Provisioning, instead of having to get into the VM to install and enable every single tool that we need, we can have a file that contains all the instructions on how to install and enable those tools, and the sistem can follow those instructions alone, without us having to get into the machine and doing it manually.
 - Create a `provision.sh` file containing BASH scipts for updating, installing and enabling necessary tools and packages (in our case, nginx, nodejs and pm2).
 
-![](provisioninstructions.PNG)
+![](images/provisioninstructions.PNG)
 
 - Now, in your Vagrant file, add the intructions written in the provision file, by typing `config.vm.provision "shell", path: "provision.sh"`. This will basically the tell the software that creates the VM to use these instructions when it runs the VM.
 
-![](provisioninvfile.PNG)
+![](images/provisioninvfile.PNG)
 
 - If you now go in the terminal in the folder where you have the project, and input `vagrant up`(only if you do not already have a VM running - in which case, simply use `<vagrant reload --provision.>`), your machine should start running the VM and you should be able to see if the instructions you provided are being configured as instructed. 
 
 - You can easily check if the VM configured properly by trying to access the I.P. address you assigned the VM in your browser, alongside the port on which the app is listening(prompted in the terminal if all the provisioning has been correctly configured). If you see the following: 
 
-![](apprunning.PNG)
+![](images/apprunning.PNG)
 
  Happy Days! You app is up and running due to a correct execution of the provisioning instructions.
 
@@ -153,7 +153,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - All it takes is setting up the file so the instructions clearly state how many VMs you want to create and their specific configuration.
 - In my case, with one Vagrant file I am going to be able to create an app and a database:
 
-![](2VMSconf.PNG)
+![](images/2VMSconf.PNG)
 
 - As you can see, as I mentioned earlier, the Vagrant file is going to send this file to the software that creates the VMs and ell it to create 2 VMX and configure them: one as an app(just like we did yesterday, while also including separate tools and packages installation instructions via provision.sh) and the second one as a database. 
 
@@ -162,7 +162,7 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Now that the Vagrant file with the instructions for two VMs is in place, we just need to make sure we run the command `vagrant up` to make sure the Vagrant file sends the instructions and the software that creates the VMs undeerstands that it needs to create them both at once. 
 - You can access the two machines separately by using two separate GIt Bash terminals, and using the commands (in my case) `vagrant ssh app` and `vagrant ssh database`. In a different case it will be a matter of how you instructed Vagrant in the Vagrant file to configure the VMs as. 
 
-![](datavsap.PNG)
+![](images/datavsap.PNG)
 
 
 

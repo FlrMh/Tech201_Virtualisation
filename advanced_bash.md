@@ -15,24 +15,24 @@
 - `uname -si` 
 - `uname -srp`
 
-![](uname.PNG)
+![](images/uname.PNG)
 
 2. ***Navigation (as we don`t have a GUI, and we are only accessing the shell, we cannot use the mouse, so you only use commands):***
-![](kernandshell.PNG) 
+![](images/kernandshell.PNG) 
 ** So, at the moment we are below the GUI, in the Shell, communicating with the Kernel through command line. And we navigate through the Kernel(the place below, generally speaking the OS of the machine) by using commands. 
 - `cd` - change directory 
 - `cd ..` - takes you back one level
 - `cd ../..` - takes you back two level
 - `cd /`- (takes you to the root directory)
 - `cd ~` - (takes you to the home directory)
-![](gettingout.PNG)
+![](images/gettingout.PNG)
 
 
 **Accessing files and folders:**
 - Absolute path (from the absolute base of the machine)
-![](abspaths.PNG)
+![](images/abspaths.PNG)
 - Relative path (from where I am right now in my machine)
-![](absvsrel.PNG)
+![](images/absvsrel.PNG)
 
 3. ***Creating folders:***
 - `touch` - creating files of any kind - but empty files.
@@ -93,7 +93,7 @@ earching for smthn:
 - changing permissions for everyone at once - `sudo chmod 777 filename.filetype`
 - numbers for changing permissions : 4 = read, 2 = read, 1 = execute. 
 
-![](calchmodfinal.PNG)
+![](images/calchmodfinal.PNG)
 
 [Chmod calculator](https://chmod-calculator.com/)
 
@@ -117,7 +117,7 @@ earching for smthn:
 2.  `sudo apt install tree -y`
 - now trype `tree` and you should see the files in your VM as follows:
 
-![](tree.PNG)
+![](images/tree.PNG)
 
 ** "config.vm.box_download_insecure = true" to add in case of unrecognised vm.
 

@@ -6,7 +6,7 @@
 
 e.g. in our case `vagrant destroy app` / `vagrant destroy database`.
 
-`vagrant status` = shows what is going on with Vagrant, if there are any machines created, if they are running, etc. 
+!!! Use `vagrant status` in your local bash terminal, not within the vm = shows what is going on with Vagrant, if there are any machines created, if they are running, etc. 
 
 3. `vagrant ssh app`(app) and `vagrant ssh in database`(environment) to get inside both machines.
 
@@ -17,6 +17,8 @@ e.g. in our case `vagrant destroy app` / `vagrant destroy database`.
  8. Need a command to install a version of mongo that the devs want us to.
  9. `sudo systemctl start mongod` - to start up the database.  this will not return anything. 
  10. `enable mongod`  - should output "created symlink..." = that means that the database it s up and running.
+ 
+ !!! we use mongodb for our database because it allows us to leave the database unpopulated and have the devs write up the code that they want us to populate the database with.
  11. `sudo nano /etc/mongod.conf` - configuration file.
  12. In the config file, we need to go to net(network interfaces). Mongo has his own port number, and we need to change the bindIP: this means the range of I.P. addresses can access the database.
  13. Best practice for production env = you should put only one specific I.P. address. Because we want to make it ccessible to everyone, we need to change it to 0.0.0.0.
@@ -52,5 +54,15 @@ e.g. in our case `vagrant destroy app` / `vagrant destroy database`.
 In order to be able to run this command, we must be sure we set up a connection between the app and database.
 32. Should return "Database Cleared  Database Seeded" - Database has been populated. The population has not been happening on the app, but on the database.
 
+
+!!! Set Up the database first with mongo.
+
+!!! Make sure everything is in place.
+
+!!! Then go to the app, npm install to install the app. 
+
+!!! Set up the EVN VARIABLE to set up the connection between app and database.
+
+!!! After you seed the database, make sure to install again the app just to make sure that everything works perfectly. 
 
 
