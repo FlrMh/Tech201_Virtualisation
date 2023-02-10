@@ -159,8 +159,8 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 
 !!! Make sure you remove any Vagrant file ou might have in your project folder before setting it up with a new one, otherwise you will encounter errors. 
 
-- Now that the Vagrant file with the instructions for two VMs is in place, we just need to make sure we run the command `vagrant up` from 2 separate Git Bash terminals, so we can access the database and the app separately, but at the same time. 
-- You can access them separately by using the commands (in my case) `vagrant ssh app` and `vagrant ssh database`. In a different case it will be a matter of how you instructed Vagrant in the Vagrant file to configure the VMs as. 
+- Now that the Vagrant file with the instructions for two VMs is in place, we just need to make sure we run the command `vagrant up` to make sure the Vagrant file sends the instructions and the software that creates the VMs undeerstands that it needs to create them both at once. 
+- You can access the two machines separately by using two separate GIt Bash terminals, and using the commands (in my case) `vagrant ssh app` and `vagrant ssh database`. In a different case it will be a matter of how you instructed Vagrant in the Vagrant file to configure the VMs as. 
 
 ![](datavsap.PNG)
 
