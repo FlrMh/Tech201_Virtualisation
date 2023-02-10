@@ -20,6 +20,6 @@ sudo apt-get install nodejs -y
 sudo npm install pm2 -g
 
 #  Running the app
-cd app/
-npm install
-node app.js
+# cd app/
+# npm install
+# node app.js # this starts up the app and makes it run in the foreground in the vm
