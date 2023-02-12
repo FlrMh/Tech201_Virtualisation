@@ -145,3 +145,12 @@ node app.js # which should ouput `Your app is ready and listening on port 3000`
  - If everything went well, you should see: 
 
  ![](images/itisworking.PNG)
+
+ !! Note: If you get the following error when trying to start up the app with `node app.js`:
+
+ ![](images/app.js.error.jpg)
+
+
+- Print the current processes that use the port number of your app by using `sudo lsof -i :3000`.
+- Then, kill the procees with `kill -9 + PID of the process that showed up as using port 3000`.
+- Now, run again `node app.js` and it should tell you that your app is listening on port 3000, and you should be able to access the app on your browser.
