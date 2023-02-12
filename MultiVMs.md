@@ -115,7 +115,11 @@ nginx -v
 node -v
 ```
 
-- Now, we have to create the Environment Varible, which will the ur `app` that everytime it needs to access a database, it can do that by accessing the `database` we just created.
+- Now, we have to create the Environment Varible, which will tell our `app` that everytime it needs to access a database, it can do that by accessing the `database` we just created.
+
+!! Note: 
+- **Environment Variable** = value that can be passed to the operating system or an application to configure it or to provide information about the system or application environment. Environment variables can be used to *set up configuration options, specify paths to external resources, and provide information about the user or the system*.
+- 
 
 ```
  export DB_HOST=mongodb://192.168.10.150:27017/posts # contains the instructions of where to access the database.

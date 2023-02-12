@@ -131,6 +131,10 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 - Now, with Provisioning, instead of having to get into the VM to install and enable every single tool that we need, we can have a file that contains all the instructions on how to install and enable those tools, and the sistem can follow those instructions alone, without us having to get into the machine and doing it manually.
 - Create a `provision.sh` file containing BASH scipts for updating, installing and enabling necessary tools and packages (in our case, nginx, nodejs and pm2).
 
+!! Note: 
+- `node.js` = allows developers to write code that runs on the server, rather than in a browser. This allows for the creation of things like web servers, chat applications, and other types of real-time applications that can handle a large number of connections and perform tasks quickly.
+- `npm` = Node Package Manager, and it's a package manager for the Node.js platform. A package manager is a tool that helps you manage the software and libraries that your application depends on.
+
 ![](images/provisioninstructions.PNG)
 
 - Now, in your Vagrant file, add the intructions written in the provision file, by typing `config.vm.provision "shell", path: "provision.sh"`. This will basically the tell the software that creates the VM to use these instructions when it runs the VM.
@@ -164,5 +168,5 @@ Go in the Vagrant file and delete all the comments. Keep only the 3 lines of cod
 
 ![](images/datavsap.PNG)
 
-
+- If you want to see how to interconnect the 2 VMs, have a look at MultiVMS.md file. :)
 
