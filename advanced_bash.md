@@ -56,13 +56,14 @@
 - `rm -rf nameoffile.filetype`
 - `rm -rf foldername`
 - `rm -rf` - can potentially delete your whole Linux environment.
-earching for smthn:
+
+Searching for a word/value:
 - `grep wordtobefound filenamewhereyouarechecking.filetype`
 - `grep wordtobefound *` - prints all the places where you can find that word.
 - `grep wordtobefound * -R` - recursive look-up = check everything inside of folders within folders etc. 
 
 7. ***Wild cards:***
-- allow us to use characters we use in our files and folders names so we can easily access them.
+- allow us to call characters we use in our files and folders names so we can easily access them.
 - `ls file*` - will return me all the files and folders that begin with "file".
 
 
@@ -104,7 +105,7 @@ earching for smthn:
 - `ps aux` = print out of all the systems running in  the background. 
 
 **Killing processes:**
-- create a random process `sleep 120(time you want it to run for) &(& - makes it run in the background)` - will return a number in eg in my case[1]1955.
+- create a random process `sleep 120(time you want it to run for) &(& - makes it run in the background)` - will return a number; e.g in my case[1]1955.
 - to kill `sleep` use `kill -9 and the PID(in this case 1955).
 - after you kill something with `kill -9`, if you type `ps` it will show `sleep` as Killed. 
 - `Ctrl + Z` - stops a program
@@ -163,6 +164,34 @@ earching for smthn:
 - Move into the `app` folder and then run `npm install` then `node app.js`
 - Go on your web browser, `copy + paste` the I.P. address you set for the app in the Vagrant file, and add the protocol indicated by terminal at the end of the I.P. address in the following format:
 `http://192.168.10.100:3000/`.
+
+
+## Some of the most used commands in `bash`:
+
+1. `ls`: Lists the contents of a directory.
+2. `cd`: Changes the current working directory.
+3. `pwd`: Prints the current working directory.
+4. `echo`: Prints text to the terminal.
+5. `cat`: Concatenates and displays the contents of files.
+6. `cp`: Copies files and directories.
+7. `mv`: Moves or renames files and directories.
+8. `rm`: Deletes files and directories.
+9. `mkdir`: Creates a new directory.
+10. `rmdir`: Deletes an empty directory.
+11. `touch`: Creates a new, empty file.
+12. `find`: Searches for files and directories.
+13. `rep`: Searches for text patterns in files.
+14. `sort`: Sorts the contents of a file.
+15. `uniq`: Filters out repeating lines in a file.
+16. `history`: Shows a list of previously executed commands.
+17. `man`: Displays the manual pages for a command.
+18. `top`: Displays information about the system's running processes.
+19. `kill`: Terminates a process by its PID.
+20. `ps`: Displays information about the current processes.
+21. `nano`: Text editor for configuration files or scripts.
+22. `source`: Runs a script or source file in the current shell environment.
+23. `export`: Used to set environment variables in the current shell session.
+24. `chmod`: Used to change the permissions of files and directories.
 
 
 
