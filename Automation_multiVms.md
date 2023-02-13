@@ -26,7 +26,22 @@ Let`s automate the configuration of the 2 VMs we created previously. We will bre
 - If you remember the steps we took when we did the mongo.db configuration manually, we now just have to take those commands and add them in the provision file. 
 - In my case, I will add in the provision file the instruction to also start and enable mongo.db once the configuration is done (see below).
 
-![](images/dbmongo.PNG)
+```
+# Setting up mongodb
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
+
+echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+sudo apt-get update -y
+
+sudo apt-get upgrade -y
+
+sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+
+sudo systemctl start mongod
+
+sudo systemctl enable mongod
+```
 
 - If you now do `vagrant ssh database` mongo.db should be running, and you would only have to change the network interface configurations, restart mongo, re-enable it and restart it. It should be active and running if all went well. 
 
