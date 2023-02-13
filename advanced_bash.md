@@ -43,6 +43,7 @@
 4. ***Copying files:***
 - `cp +namefile.filetype nameofnewfile.filetype` - copies the content of a file.
 - `cp filename.filetype directory/nameofcopiedfile.filetype` - copies the content of a file into a new file within a specified folder. 
+
 ** copying folders:
 - `cp -rf my_folder new_folder` - rf = recursive(to the action on the folder and everything inside), force(do it even if the file is locked or is being used) - in the format of : cp -rf "the folder you want to copy"  "the name of the new folder where you want to copy the previously mentioned folder". 
 - `rsync -r nameofthefirstfolder nameofthenewfolder` - syncs the folders 

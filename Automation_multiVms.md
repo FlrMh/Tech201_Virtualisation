@@ -46,3 +46,35 @@ sudo systemctl enable mongod
 - If you now do `vagrant ssh database` mongo.db should be running, and you would only have to change the network interface configurations, restart mongo, re-enable it and restart it. It should be active and running if all went well. 
 
 !! Note: Please make sure you follow the rest of the process manually to verify if the automation step worked properly and you can access the `/posts` within the database. 
+
+### Step 3: Change the network configuration of mongo.db
+
+- If we were to change the network configurations for the mongo.db manually, if you remember, we would have to edit a file called `mongod.conf` and replace the I.P. address with 0.0.0.0. This will basically mean that we can access the database from any I.P. address. 
+- Now, if we were to do that as part of an automation step, we would have to find a way to change those settings through command line. 
+- One way of doing it is, in the provision file, add a step stat removes the content of the current `mongod.conf` file and replaces it with the contents of a file that we will manually create that will store the conf for mongo.db hat we need. 
+
+ ![](images/mongoconf.PNG)
+
+![](images/mongodb.PNG)
+
+- After creating this file and making the necessary adjustments, we just have to put the commands of removing the content of the intial file and replace it will the content of our configuration file.
+
+```
+sudo rm /etc/mongod.conf # removes the content of the initial configuration file for mongo.cb
+
+sudo cp environment/db/mongodb.conf /etc/mongod.conf # replaces the content of the initial configuration file with the contents of the file we just created.
+```
+
+- To make sure that the changes have been implemented, simply run:
+
+```
+sudo systemctl restart mongod
+
+sudo systemctl enable mongod
+```
+- So, now, when you do `vagrant up`, the `database` VM will be fully set up with all the configurations that you need to have mongo.db run properly and be able to connect to it with the `app`.
+- You will still need to get in the `database` VM to chech that mongo.db is active and running with ```sudo systemctl status mongod```, and then move to the `app` VM to do the rest of the set up for the app.
+
+### Step 4: Setting up a reverse-proxy on your `app` VM
+
+
