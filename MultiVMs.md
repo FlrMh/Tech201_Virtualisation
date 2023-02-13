@@ -1,4 +1,4 @@
-## Setting up and connecting 2 Virtual Machines `database` and `app.
+## Setting up and connecting 2 Virtual Machines `database` and `app`.
 
 ### Pre-requisites:
 - A project folder.
