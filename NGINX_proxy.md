@@ -131,7 +131,7 @@ We will simply have to replace the current configuration with the following:
 
 ![](images/portnumber.PNG)
 
-4. Once you did the necessary changes, let`s make sure that we didn`t make any mistake by typing in `sudo nginx -t`. 
+4. Once you did the necessary changes, make sure that we did not make any mistake by typing in `sudo nginx -t`. 
 5. To set up these changes, we have to restart nginx by using `sudo systemctl restart nginx`.
 6. Now, we should be able to have everything in place, and access our app by using only the I.P. address, so without having to mention every single time the port number. Type the I.P. address in your web browser, same way we normally check if nginx is up and running. And......
 

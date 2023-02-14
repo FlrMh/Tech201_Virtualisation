@@ -77,4 +77,13 @@ sudo systemctl enable mongod
 
 ### Step 4: Setting up a reverse-proxy on your `app` VM
 
+- If you remember from the previous time we set a reverse-proxy, we had to change the default settings for nginx.
+- Well, in provisioning, we have to tell the system to make those changes to the default file through the shell script.
+- So, in order to change the configuration for the nginx `default` file, we first have to make sure that we remove the default settings, replace them with the customized configuration, and make sure we restart nginx to set those changes in place.
+- So, please go to the `provision.sh` file for the `app` VM, and add the following code as part of the provision:
 
+```
+sudo rm /etc/nginx/sites-available/default
+sudo cp app/reverse_proxy /etc/nginx/sites-available/default # Please make sure, in the case of the custom configuration file, you need to put the correct path. 
+sudo systemctl restart nginx
+```
