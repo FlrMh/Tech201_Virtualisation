@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
     app.vm.network "private_network", ip: "192.168.10.100"
    
     app.vm.synced_folder "app", "/home/vagrant/app"
-    app.vm.provision "shell", path: "environment/app/provision.sh", privileged: false
+    app.vm.provision "shell", path: "app/provision.sh", privileged: false
   end
 
   config.vm.define "database" do |database|
