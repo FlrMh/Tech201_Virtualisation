@@ -1,6 +1,6 @@
 # DevOps and Development Environments
 # Adding changes via Git BASH to test connection with Jenkins
-## Adding new changes to check new branch
+## Adding new changes to check new branch "dev-branch"!
 ## DevOps
 
 ### Cloud 
