@@ -12,9 +12,9 @@ sudo apt-get install python -y
 
 # Setting up reverse proxy on nginx
 
-sudo rm /etc/nginx/sites-available/default
-sudo cp app/reverse_proxy /etc/nginx/sites-available/default
-sudo systemctl restart nginx
+#sudo rm /etc/nginx/sites-available/default
+#sudo cp app/reverse_proxy /etc/nginx/sites-available/default
+#sudo systemctl restart nginx
 
 
 # Install nodejs
